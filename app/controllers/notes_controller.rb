@@ -12,6 +12,14 @@ class NotesController < ApplicationController
            status: :ok
   end
 
+  def update
+    note = Note.find(:id)
+
+    note.update(note_params)
+
+    head :no_content
+  end
+
   def create
     new_note = Note.create!(note_params)
 
